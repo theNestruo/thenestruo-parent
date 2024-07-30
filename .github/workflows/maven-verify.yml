@@ -1,23 +1,19 @@
-name: Deploy to GitHub Packages
+name: Verify
 
 on:
-  release:
-    types: [ created ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: write
 
     steps:
 
     - name: Setup Maven
       uses: s4u/setup-maven-action@v1.14.0
 
-    - name: Deploy
-      run: mvn --batch-mode deploy
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Verify
+      run: mvn --batch-mode verify
