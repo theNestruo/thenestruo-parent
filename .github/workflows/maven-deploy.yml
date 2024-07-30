@@ -1,9 +1,9 @@
-name: Maven - CI
+name: Verify
 
 on:
   push:
     branches: [ main ]
-  pull-request:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -15,5 +15,5 @@ jobs:
     - name: Setup Maven
       uses: s4u/setup-maven-action@v1.14.0
 
-    - name: Build
+    - name: Verify
       run: mvn --batch-mode verify
