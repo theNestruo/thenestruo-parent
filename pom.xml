@@ -32,12 +32,12 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub theNestruo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/theNestruo/theNestruo-parent</url>
+			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
 		</repository>
 		<snapshotRepository>
 			<id>github</id>
 			<name>GitHub theNestruo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/theNestruo/theNestruo-parent</url>
+			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -123,7 +123,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub theNestruo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/theNestruo/theNestruo-parent</url>
+			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
