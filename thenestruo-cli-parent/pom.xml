@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.thenestruo</groupId>
 		<artifactId>thenestruo-parent</artifactId>
-		<version>2.2</version>
+		<version>2.3</version>
 	</parent>
 
 	<artifactId>thenestruo-cli-parent</artifactId>
@@ -28,6 +28,12 @@
 			<artifactId>commons-cli</artifactId>
 		</dependency>
 
+		<!-- Jansi -->
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi</artifactId>
+		</dependency>
+		
 		<!-- Logback (classic module) -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -53,22 +59,36 @@
 							</goals>
 							<configuration>
 								<createDependencyReducedPom>false</createDependencyReducedPom>
+								<minimizeJar>true</minimizeJar>
 								<filters>
+									<filter>
+										<artifact>ch.qos.logback:*</artifact>
+										<includes>
+											<include>**</include>
+										</includes>
+									</filter>
 									<filter>
 										<artifact>*:*</artifact>
 										<excludes>
 											<exclude>META-INF/MANIFEST.MF</exclude>
+											<exclude>META-INF/versions/9/module-info.class</exclude>
+											<exclude>module-info.class</exclude>
 										</excludes>
 									</filter>
 								</filters>
 								<transformers>
+									<!-- Prevents license duplication -->
+									<transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
+									<!-- Prepares merged NOTICE -->
 									<transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
 										<addHeader>false</addHeader>
 									</transformer>
-									<transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
+									<!-- Sets entries in the MANIFEST -->
 									<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 										<mainClass>${mainClass}</mainClass>
 									</transformer>
+									<!-- Relocated class names in META-INF/services resources and merges them -->
+									<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
 								</transformers>
 							</configuration>
 						</execution>
