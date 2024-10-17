@@ -47,7 +47,7 @@
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>2.5-SNAPSHOT</thenestruo.version>
+		<thenestruo.version>2.5</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.9.0</commons-cli.version>
