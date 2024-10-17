@@ -58,8 +58,8 @@
 		<jackson.version>2.18.0</jackson.version>
 		<jakarta.xml.bind.version>4.0.2</jakarta.xml.bind.version>
 		<jansi.version>2.4.1</jansi.version>
-		<junit.version>5.11.1</junit.version>
-		<logback.version>1.5.8</logback.version>
+		<junit.version>5.11.2</junit.version>
+		<logback.version>1.5.11</logback.version>
 		<spotbugs.version>4.8.6</spotbugs.version>
 
 		<!-- Plugin management -->
