@@ -54,8 +54,8 @@
 		<commons-csv.version>1.12.0</commons-csv.version>
 		<commons-collections4.version>4.4</commons-collections4.version>
 		<commons-lang3.version>3.17.0</commons-lang3.version>
-		<commons-io.version>2.17.0</commons-io.version>
-		<jackson.version>2.18.1</jackson.version>
+		<commons-io.version>2.18.0</commons-io.version>
+		<jackson.version>2.18.2</jackson.version>
 		<jakarta.xml.bind.version>4.0.2</jakarta.xml.bind.version>
 		<jansi.version>2.4.1</jansi.version>
 		<junit.version>5.11.3</junit.version>
@@ -66,9 +66,9 @@
 		<maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
 		<extra-enforcer-rules.version>1.9.0</extra-enforcer-rules.version>
 		<maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
-		<versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
+		<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
 		<modernizer-maven-plugin.version>2.9.0</modernizer-maven-plugin.version>
-		<spotbugs-maven-plugin.version>4.8.6.5</spotbugs-maven-plugin.version>
+		<spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
