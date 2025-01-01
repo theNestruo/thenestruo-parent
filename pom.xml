@@ -58,8 +58,8 @@
 		<jackson.version>2.18.2</jackson.version>
 		<jakarta.xml.bind.version>4.0.2</jakarta.xml.bind.version>
 		<jansi.version>2.4.1</jansi.version>
-		<junit.version>5.11.3</junit.version>
-		<logback.version>1.5.12</logback.version>
+		<junit.version>5.11.4</junit.version>
+		<logback.version>1.5.15</logback.version>
 		<spotbugs.version>4.8.6</spotbugs.version>
 
 		<!-- Plugin management -->
@@ -67,7 +67,7 @@
 		<extra-enforcer-rules.version>1.9.0</extra-enforcer-rules.version>
 		<maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
 		<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
-		<modernizer-maven-plugin.version>2.9.0</modernizer-maven-plugin.version>
+		<modernizer-maven-plugin.version>3.0.0</modernizer-maven-plugin.version>
 		<spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
 	</properties>
 
