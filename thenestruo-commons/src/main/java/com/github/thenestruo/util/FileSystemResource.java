@@ -1,11 +1,11 @@
 package com.github.thenestruo.util;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.file.PathUtils;
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -13,35 +13,33 @@ import org.apache.commons.lang3.Validate;
  */
 public class FileSystemResource implements ReadableResource {
 
-	private final File file;
+	private final Path path;
 
 	/**
 	 * Constructor
 	 * @param path the path of the file system resource
 	 */
 	public FileSystemResource(final String path) {
-		this(new File(Validate.notBlank(path, "The path must not be null nor blank")));
+		this(Path.of(Validate.notBlank(path, "The path must not be null nor blank")));
 	}
 
 	/**
 	 * Constructor
-	 * @param file the file
+	 * @param path the path
 	 */
-	public FileSystemResource(final File file) {
+	public FileSystemResource(final Path path) {
 		super();
 
-		this.file = Validate.notNull(file, "The file must not be null");
+		this.path = Validate.notNull(path, "The path must not be null");
 	}
 
 	@Override
 	public InputStream getInputStream() {
 
 		try {
-			return this.file.exists() && this.file.canRead()
-					? new FileInputStream(this.file)
-					: null;
+			return Files.newInputStream(this.path);
 
-		} catch (final FileNotFoundException e) {
+		} catch (final IOException e) {
 			return null;
 		}
 	}
@@ -49,14 +47,14 @@ public class FileSystemResource implements ReadableResource {
 	@Override
 	public long sizeOf() {
 
-		if (this.file == null) {
+		if (this.path == null) {
 			return -1;
 		}
 
 		try {
-			return FileUtils.sizeOf(this.file);
+			return PathUtils.sizeOf(this.path);
 
-		} catch (final IllegalArgumentException e) {
+		} catch (final IOException e) {
 			return -1;
 		}
 	}
