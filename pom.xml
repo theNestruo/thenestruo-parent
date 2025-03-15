@@ -5,7 +5,7 @@
 
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>2.6.2</version>
+	<version>2.6</version>
 	<packaging>pom</packaging>
 
 	<description>(theNestruo) Parent POM</description>
@@ -42,12 +42,12 @@
 	</distributionManagement>
 
 	<properties>
-		<maven.compiler.source>21</maven.compiler.source>
-		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>2.6.2</thenestruo.version>
+		<thenestruo.version>2.6</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.9.0</commons-cli.version>
