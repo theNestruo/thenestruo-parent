@@ -5,7 +5,7 @@
 
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>2.6.0</version>
+	<version>2.6.1</version>
 	<packaging>pom</packaging>
 
 	<description>(theNestruo) Parent POM</description>
@@ -47,7 +47,7 @@
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>2.6.0</thenestruo.version>
+		<thenestruo.version>2.6.1</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.9.0</commons-cli.version>
@@ -57,7 +57,6 @@
 		<commons-io.version>2.18.0</commons-io.version>
 		<jackson.version>2.18.3</jackson.version>
 		<jakarta.xml.bind.version>4.0.2</jakarta.xml.bind.version>
-		<jansi.version>2.4.1</jansi.version>
 		<junit.version>5.12.0</junit.version>
 		<spotbugs.version>4.9.1</spotbugs.version>
 		<tinylog.version>2.7.0</tinylog.version>
@@ -122,13 +121,6 @@
 				<groupId>jakarta.xml.bind</groupId>
 				<artifactId>jakarta.xml.bind-api</artifactId>
 				<version>${jakarta.xml.bind.version}</version>
-			</dependency>
-
-			<!-- Jansi -->
-			<dependency>
-				<groupId>org.fusesource.jansi</groupId>
-				<artifactId>jansi</artifactId>
-				<version>${jansi.version}</version>
 			</dependency>
 
 			<!-- JUnit -->

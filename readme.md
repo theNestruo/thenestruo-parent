@@ -75,24 +75,10 @@
 </project>
 ```
 
-### Recommended CLI application _scr/main/resources/logback.xml_
+### Recommended CLI application _scr/main/resources/tinylog.properties_
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration>
-
-<configuration>
-
-	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-		<withJansi>true</withJansi>
-		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>[%highlight(%level)] %message%rootException%n</pattern>
-		</encoder>
-	</appender>
-
-	<root level="info">
-		<appender-ref ref="CONSOLE" />
-	</root>
-
-</configuration>
+```properties
+writer        = console
+writer.level  = info
+writer.format = [{level}] {message}
 ```
