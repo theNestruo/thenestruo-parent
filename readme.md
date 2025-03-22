@@ -2,7 +2,7 @@
 
 ## (theNestruo) Parent POM for CLI applications
 
-### Minimal CLI application _pom.xml_
+### Minimal _pom.xml_
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>com.github.thenestruo</groupId>
 		<artifactId>thenestruo-cli-parent</artifactId>
-		<version>2.3</version>
+		<version>2.7</version>
 		<relativePath />
 	</parent>
 
@@ -69,16 +69,44 @@
 				<artifactId>maven-shade-plugin</artifactId>
 			</plugin>
 
+			<!-- Runs the application once to create AppCDS archive file -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+			</plugin>
+
 		</plugins>
 	</build>
 
 </project>
 ```
 
-### Recommended CLI application _scr/main/resources/tinylog.properties_
+### Recommended _scr/main/resources/tinylog.properties_
 
 ```properties
 writer        = console
 writer.level  = info
 writer.format = [{level}] {message}
 ```
+
+### Recommended usage
+
+If _maven-shade-plugin_ was included in application _pom.xml_:
+
+```batch
+java -jar <finalName>.jar <jarArgs>
+```
+
+AppCDS archive file can be used for performance reasons.
+
+- If _exec-maven-plugin_ was used, AppCDS archive file (_.jsa_) will be created alongside Java archive (_.jar_):
+
+	```batch
+	java -XX:SharedArchiveFile=<finalName>.jsa -jar <finalName>.jar <jarArgs>
+	```
+
+- If _exec-maven-plugin_ was not used:
+
+	```batch
+	java -XX:+AutoCreateSharedArchive -XX:SharedArchiveFile=<finalName>.jsa -jar <finalName>.jar <jarArgs>
+	```
