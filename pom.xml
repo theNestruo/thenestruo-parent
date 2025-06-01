@@ -57,13 +57,13 @@
 		<commons-io.version>2.19.0</commons-io.version>
 		<jackson.version>2.19.0</jackson.version>
 		<jakarta.xml.bind.version>4.0.2</jakarta.xml.bind.version>
-		<junit.version>5.12.2</junit.version>
+		<junit.version>5.13.0</junit.version>
 		<spotbugs.version>4.9.3</spotbugs.version>
 		<tinylog.version>2.7.0</tinylog.version>
 
 		<!-- Plugin management -->
 		<maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
-		<exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
+		<exec-maven-plugin.version>3.5.1</exec-maven-plugin.version>
 		<extra-enforcer-rules.version>1.10.0</extra-enforcer-rules.version>
 		<maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
 		<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
