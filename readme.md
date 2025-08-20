@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>com.github.thenestruo</groupId>
 		<artifactId>thenestruo-cli-parent</artifactId>
-		<version>2.7</version>
+		<version>3.0</version>
 		<relativePath />
 	</parent>
 
