@@ -5,7 +5,7 @@
 
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>3.0</version>
+	<version>3.1</version>
 	<packaging>pom</packaging>
 
 	<description>(theNestruo) Parent POM</description>
@@ -140,6 +140,11 @@
 			<dependency>
 				<groupId>org.tinylog</groupId>
 				<artifactId>tinylog-impl</artifactId>
+				<version>${tinylog.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.tinylog</groupId>
+				<artifactId>slf4j-tinylog</artifactId>
 				<version>${tinylog.version}</version>
 			</dependency>
 
