@@ -5,7 +5,7 @@
 
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>3.1</version>
+	<version>3.2</version>
 	<packaging>pom</packaging>
 
 	<description>(theNestruo) Parent POM</description>
@@ -47,7 +47,7 @@
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>3.1</thenestruo.version>
+		<thenestruo.version>3.2</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.11.0</commons-cli.version>
