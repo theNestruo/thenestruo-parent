@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.thenestruo</groupId>
 		<artifactId>thenestruo-parent</artifactId>
-		<version>3.2</version>
+		<version>3.3</version>
 	</parent>
 
 	<artifactId>thenestruo-cli-parent</artifactId>
