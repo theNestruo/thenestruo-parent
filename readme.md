@@ -27,11 +27,6 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>com.github.thenestruo</groupId>
-			<artifactId>thenestruo-commons</artifactId>
-		</dependency>
-
 		<!-- JUnit -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -41,22 +36,7 @@
 
 	</dependencies>
 
-	<repositories>
-
-		<!-- Maven Central -->
-		<repository>
-			<id>central</id>
-			<url>https://repo1.maven.org/maven2</url>
-		</repository>
-
-		<!-- GitHub Packages: github.com/theNestruo/thenestruo-parent-->
-		<repository>
-			<id>github-thenestruo-parent</id>
-			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
-		</repository>
-
-	</repositories>
-
+	<!-- == Build Settings == -->
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -77,6 +57,24 @@
 
 		</plugins>
 	</build>
+
+	<!-- == Environment Settings == -->
+
+	<repositories>
+
+		<!-- Maven Central -->
+		<repository>
+			<id>central</id>
+			<url>https://repo1.maven.org/maven2</url>
+		</repository>
+
+		<!-- GitHub Packages: github.com/theNestruo/thenestruo-parent-->
+		<repository>
+			<id>github-thenestruo-parent</id>
+			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
+		</repository>
+
+	</repositories>
 
 </project>
 ```
