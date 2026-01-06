@@ -1,5 +1,8 @@
 name: Deploy to GitHub Packages
 
+permissions:
+  contents: read
+
 on:
   release:
     types: [ created ]
