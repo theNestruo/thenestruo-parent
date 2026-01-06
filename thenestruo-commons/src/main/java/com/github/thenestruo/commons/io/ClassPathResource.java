@@ -1,32 +1,31 @@
-package com.github.thenestruo.util;
+package com.github.thenestruo.commons.io;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.Validate;
-import org.apache.commons.lang3.exception.ExceptionUtils;
+import com.github.thenestruo.commons.Strings;
 
 /**
  * A readable classpath resource
  */
-public class ClassPathResource implements ReadableResource {
+public class ClassPathResource extends AbstractReadableResource {
 
 	/**
 	 * Factory method
+	 *
 	 * @param path the path of the classpath resource
 	 * @throws IOException if the classpath resource does not exists
 	 */
-	public static ClassPathResource from(String path) {
+	public static ClassPathResource from(final String path) {
 
-		ClassPathResource instance = new ClassPathResource(path);
+		final ClassPathResource instance = new ClassPathResource(path);
 
 		// Checks existence
-		try (InputStream is = instance.getInputStream()) {
+		try (final InputStream is = instance.getInputStream()) {
 			return instance;
 
-		} catch (IOException e) {
-			return ExceptionUtils.rethrow(e);
+		} catch (final IOException e) {
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -34,13 +33,12 @@ public class ClassPathResource implements ReadableResource {
 
 	/**
 	 * Constructor
+	 *
 	 * @param path the path of the classpath resource
 	 * @throws IOException if the classpath resource does not exists
 	 */
 	public ClassPathResource(final String path) {
-		super();
-
-		this.path = Validate.notBlank(path, "The path must not be null nor blank");
+		this.path = Strings.requireNotEmpty(path);
 	}
 
 	@Override
@@ -54,10 +52,15 @@ public class ClassPathResource implements ReadableResource {
 	public long sizeOf() {
 
 		try (InputStream is = this.getInputStream()) {
-			return IOUtils.consume(is);
+			final byte[] buffer = new byte[8192];
+			long count = 0;
+			for (int n = -1; (n = is.read(buffer)) != -1;) {
+				count += n;
+			}
+			return count;
 
 		} catch (final IOException e) {
-			return -1;
+			return -1L;
 		}
 	}
 }

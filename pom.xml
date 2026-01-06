@@ -3,43 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<!-- == The Basics == -->
+
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>4.0</version>
+	<version>5.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
-	<description>(theNestruo) Parent POM</description>
-
-	<url>https://github.com/theNestruo/thenestruo-parent</url>
-	<licenses>
-		<license>
-			<name>Apache-2.0 license</name>
-			<url>https://github.com/theNestruo/thenestruo-parent/blob/main/LICENSE</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<id>theNestruo</id>
-		</developer>
-	</developers>
 
 	<modules>
 		<module>thenestruo-cli-parent</module>
 		<module>thenestruo-commons</module>
 	</modules>
-
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub theNestruo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
-		</repository>
-		<snapshotRepository>
-			<id>github</id>
-			<name>GitHub theNestruo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<properties>
 		<maven.compiler.source>21</maven.compiler.source>
@@ -47,7 +21,7 @@
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>4.0</thenestruo.version>
+		<thenestruo.version>5.0-SNAPSHOT</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.11.0</commons-cli.version>
@@ -161,20 +135,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<repositories>
-		<repository>
-			<id>central</id>
-			<url>https://repo1.maven.org/maven2</url>
-		</repository>
-		<repository>
-			<id>github</id>
-			<name>GitHub theNestruo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+	<!-- == Build Settings ==-->
 
 	<build>
 		<pluginManagement>
@@ -345,5 +306,58 @@
 
 		</plugins>
 	</build>
+
+	<!-- == More Project Information == -->
+
+	<description>(theNestruo) Parent POM</description>
+
+	<url>https://github.com/theNestruo/thenestruo-parent</url>
+
+	<licenses>
+		<license>
+			<name>Apache-2.0 license</name>
+			<url>https://github.com/theNestruo/thenestruo-parent/blob/main/LICENSE</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>theNestruo</id>
+		</developer>
+	</developers>
+
+	<!-- == Environment Settings ==-->
+
+	<scm>
+		<developerConnection>scm:git:https://github.com/theNestruo/thenestruo-parent.git</developerConnection>
+	</scm>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>https://repo1.maven.org/maven2</url>
+		</repository>
+		<repository>
+			<id>github</id>
+			<name>GitHub theNestruo Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub theNestruo Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
+		</repository>
+		<snapshotRepository>
+			<id>github</id>
+			<name>GitHub theNestruo Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/theNestruo/thenestruo-parent</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>

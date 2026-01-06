@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.thenestruo</groupId>
 		<artifactId>thenestruo-parent</artifactId>
-		<version>4.0</version>
+		<version>5.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>thenestruo-commons</artifactId>
@@ -15,7 +15,7 @@
 
 	<dependencies>
 
-		<!-- Apache Commons -->
+		<!-- Apache Commons
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-collections4</artifactId>
@@ -24,11 +24,13 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-		</dependency>
+			<optional>true</optional>
+		</dependency> -->
 
 	</dependencies>
 
