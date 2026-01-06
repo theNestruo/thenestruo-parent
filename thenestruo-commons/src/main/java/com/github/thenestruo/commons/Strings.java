@@ -2,6 +2,8 @@ package com.github.thenestruo.commons;
 
 public class Strings {
 
+	public static final String EMPTY = "";
+
 	public static int length(final String string) {
 
 		return string == null ? 0 : string.length();
@@ -112,6 +114,60 @@ public class Strings {
 			return string;
 		}
 		return endsWith(string, sufix) ? string : (string + sufix);
+	}
+
+	public static String substringAfter(final String string, final char separator) {
+
+		if (string == null) {
+			return null;
+		}
+		final int index = string.indexOf(separator);
+		if (index == -1) {
+			return EMPTY;
+		}
+		return string.substring(index + 1);
+	}
+
+	public static String substringAfter(final String string, final String separator) {
+
+		if (string == null) {
+			return null;
+		}
+		if (separator == null) {
+			return EMPTY;
+		}
+		final int index = string.indexOf(separator);
+		if (index == -1) {
+			return EMPTY;
+		}
+		return string.substring(index + 1);
+	}
+
+	public static String substringAfterLast(final String string, final char separator) {
+
+		if (string == null) {
+			return null;
+		}
+		final int index = string.lastIndexOf(separator);
+		if (index == -1) {
+			return EMPTY;
+		}
+		return string.substring(index + 1);
+	}
+
+	public static String substringAfterLast(final String string, final String separator) {
+
+		if (string == null) {
+			return null;
+		}
+		if (separator == null) {
+			return EMPTY;
+		}
+		final int index = string.lastIndexOf(separator);
+		if (index == -1) {
+			return EMPTY;
+		}
+		return string.substring(index + 1);
 	}
 
 	private Strings() {
