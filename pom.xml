@@ -5,7 +5,7 @@
 
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>5.1</version>
+	<version>5.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -19,7 +19,7 @@
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>5.1</thenestruo.version>
+		<thenestruo.version>5.2-SNAPSHOT</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.11.0</commons-cli.version>
