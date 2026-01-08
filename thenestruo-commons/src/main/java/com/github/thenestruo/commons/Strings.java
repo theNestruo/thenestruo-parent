@@ -217,6 +217,12 @@ public class Strings {
 		return endsWithIgnoreCase(string, suffix) ? string.substring(0, string.length() - suffix.length()) : string;
 	}
 
+	public static String prependIfMissing(final String string, final char prefix) {
+
+		return (string != null)
+				&& !startsWith(string, prefix) ? prefix + string : string;
+	}
+
 	public static String prependIfMissing(final String string, final String prefix) {
 
 		return (string != null) && (prefix != null)
@@ -227,6 +233,12 @@ public class Strings {
 
 		return (string != null) && (prefix != null)
 				&& !startsWithIgnoreCase(string, prefix) ? prefix + string : string;
+	}
+
+	public static String appendIfMissing(final String string, final char suffix) {
+
+		return (string != null)
+				&& !endsWith(string, suffix) ? (string + suffix) : string;
 	}
 
 	public static String appendIfMissing(final String string, final String suffix) {
