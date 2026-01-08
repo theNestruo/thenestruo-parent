@@ -6,10 +6,12 @@
 	<parent>
 		<groupId>com.github.thenestruo</groupId>
 		<artifactId>thenestruo-parent</artifactId>
-		<version>5.2</version>
+		<version>5.3-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>thenestruo-commons</artifactId>
+
+	<!-- == More Project Information == -->
 
 	<description>(theNestruo) Reusable Java components</description>
 

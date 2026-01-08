@@ -19,7 +19,7 @@ public class Paths {
 			return path;
 		}
 
-		return path.resolveSibling(path.getFileName().toString() + suffix);
+		return path.resolveSibling(Strings.toStringOrEmpty(path.getFileName()) + suffix);
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class Paths {
 			return true;
 		}
 
-		return Strings.endsWith(path.getFileName().toString(), suffix);
+		return Strings.endsWith(Strings.toString(path.getFileName()), suffix);
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class Paths {
 			return path;
 		}
 
-		return path.resolveSibling(Strings.removeEnd(path.getFileName().toString(), suffix));
+		return path.resolveSibling(Strings.removeEnd(Strings.toStringOrEmpty(path.getFileName()), suffix));
 	}
 
 	private Paths() {

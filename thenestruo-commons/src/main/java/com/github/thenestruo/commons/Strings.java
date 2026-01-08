@@ -1,6 +1,7 @@
 package com.github.thenestruo.commons;
 
 import java.util.Locale;
+import java.util.Objects;
 
 public class Strings {
 
@@ -45,6 +46,16 @@ public class Strings {
 			throw new IllegalArgumentException(message);
 		}
 		return string;
+	}
+
+	public static String toString(final Object object) {
+
+		return Objects.toString(object, null);
+	}
+
+	public static String toStringOrEmpty(final Object object) {
+
+		return Objects.toString(object, EMPTY);
 	}
 
 	public static boolean isBlank(final String string) {
