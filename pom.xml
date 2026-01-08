@@ -112,6 +112,13 @@
 				<artifactId>picocli</artifactId>
 				<version>${picocli.version}</version>
 			</dependency>
+			
+			<!-- SpotBugs -->
+			<dependency>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-annotations</artifactId>
+				<version>${spotbugs.version}</version>
+			</dependency>
 
 			<!-- tinylog -->
 			<dependency>
