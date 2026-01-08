@@ -255,30 +255,6 @@
 					</executions>
 				</plugin>
 
-				<!-- Runs the application once to create AppCDS archive file -->
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-					<version>${exec-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>generate-appcds</id>
-							<phase>verify</phase><!-- (after package) -->
-							<goals>
-								<goal>exec</goal>
-							</goals>
-							<configuration>
-								<executable>java</executable>
-								<arguments>
-									<argument>-XX:ArchiveClassesAtExit=${project.build.directory}\${project.build.finalName}.jsa</argument>
-									<argument>-jar</argument>
-									<argument>${project.build.directory}\${project.build.finalName}.jar</argument>
-								</arguments>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-
 			</plugins>
 		</pluginManagement>
 
