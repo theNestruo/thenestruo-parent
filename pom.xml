@@ -5,7 +5,7 @@
 
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>5.3-SNAPSHOT</version>
+	<version>5.3</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -19,7 +19,7 @@
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>5.3-SNAPSHOT</thenestruo.version>
+		<thenestruo.version>5.3</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.11.0</commons-cli.version>
@@ -112,7 +112,7 @@
 				<artifactId>picocli</artifactId>
 				<version>${picocli.version}</version>
 			</dependency>
-			
+
 			<!-- SpotBugs -->
 			<dependency>
 				<groupId>com.github.spotbugs</groupId>
