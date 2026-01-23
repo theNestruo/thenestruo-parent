@@ -9,10 +9,10 @@
 		<version>5.4-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>thenestruo-commons</artifactId>
+	<artifactId>thenestruo-commons-msx</artifactId>
 
 	<!-- == More Project Information == -->
 
-	<description>(theNestruo) Reusable Java components</description>
+	<description>(theNestruo) MSX-related reusable Java components</description>
 
 </project>

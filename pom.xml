@@ -5,12 +5,13 @@
 
 	<groupId>com.github.thenestruo</groupId>
 	<artifactId>thenestruo-parent</artifactId>
-	<version>5.3</version>
+	<version>5.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
 		<module>thenestruo-cli-parent</module>
 		<module>thenestruo-commons</module>
+		<module>thenestruo-commons-msx</module>
 	</modules>
 
 	<properties>
@@ -19,7 +20,7 @@
 		<maven.version.required>3.6.3</maven.version.required>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<thenestruo.version>5.3</thenestruo.version>
+		<thenestruo.version>5.4-SNAPSHOT</thenestruo.version>
 
 		<!-- Dependency management -->
 		<commons-cli.version>1.11.0</commons-cli.version>
@@ -212,26 +213,6 @@
 					</configuration>
 				</plugin>
 
-				<!-- Detects uses of legacy APIs which modern Java versions supersede -->
-				<plugin>
-					<groupId>org.gaul</groupId>
-					<artifactId>modernizer-maven-plugin</artifactId>
-					<version>${modernizer-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>modernizer</id>
-							<phase>verify</phase>
-							<goals>
-								<goal>modernizer</goal>
-							</goals>
-							<configuration>
-								<failOnViolations>false</failOnViolations>
-								<javaVersion>${maven.compiler.target}</javaVersion>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-
 				<!-- Find bugs in Java programs -->
 				<plugin>
 					<groupId>com.github.spotbugs</groupId>
@@ -251,6 +232,26 @@
 							<goals>
 								<goal>check</goal>
 							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- Detects uses of legacy APIs which modern Java versions supersede -->
+				<plugin>
+					<groupId>org.gaul</groupId>
+					<artifactId>modernizer-maven-plugin</artifactId>
+					<version>${modernizer-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>modernizer</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>modernizer</goal>
+							</goals>
+							<configuration>
+								<failOnViolations>false</failOnViolations>
+								<javaVersion>${maven.compiler.target}</javaVersion>
+							</configuration>
 						</execution>
 					</executions>
 				</plugin>
