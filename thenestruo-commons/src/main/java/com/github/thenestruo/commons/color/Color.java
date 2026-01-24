@@ -62,7 +62,7 @@ public class Color {
 			return false;
 		}
 		final Color that = (Color) obj;
-		return Objects.equals(this.hex, that.hex);
+		return this.hex == that.hex;
 	}
 
 	@Override

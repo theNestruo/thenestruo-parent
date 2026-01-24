@@ -1,5 +1,7 @@
 package com.github.thenestruo.commons.msx;
 
+import java.util.Objects;
+
 import com.github.thenestruo.commons.color.Color;
 
 public class MsxColor extends Color {
@@ -38,6 +40,25 @@ public class MsxColor extends Color {
 	protected MsxColor(final int hex, final byte index) {
 		super(hex);
 		this.index = index;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.index, super.hashCode());
+	}
+
+	@Override
+	public boolean equals(final Object obj) {
+
+		if (obj == this) {
+			return true;
+		}
+		if ((obj == null) || (obj.getClass() != this.getClass())) {
+			return false;
+		}
+		final MsxColor that = (MsxColor) obj;
+		return (this.index == that.index)
+				&& (this.getHex() == that.getHex());
 	}
 
 	@Override
