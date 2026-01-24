@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.thenestruo</groupId>
 		<artifactId>thenestruo-parent</artifactId>
-		<version>5.4-SNAPSHOT</version>
+		<version>5.4</version>
 	</parent>
 
 	<artifactId>thenestruo-commons-msx</artifactId>
@@ -18,7 +18,7 @@
 			<groupId>com.github.thenestruo</groupId>
 			<artifactId>thenestruo-commons</artifactId>
 		</dependency>
-		
+
 		<!-- JUnit -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -30,7 +30,7 @@
 			<artifactId>junit-jupiter-params</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 	<!-- == More Project Information == -->
