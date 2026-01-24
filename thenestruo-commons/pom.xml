@@ -11,6 +11,17 @@
 
 	<artifactId>thenestruo-commons</artifactId>
 
+	<dependencies>
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+
 	<!-- == More Project Information == -->
 
 	<description>(theNestruo) Reusable Java components</description>

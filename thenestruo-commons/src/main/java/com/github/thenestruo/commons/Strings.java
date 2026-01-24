@@ -1,5 +1,6 @@
 package com.github.thenestruo.commons;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -301,6 +302,20 @@ public class Strings {
 		}
 		final int index = string.lastIndexOf(separator);
 		return index == -1 ? EMPTY : string.substring(index + 1);
+	}
+
+	public static String leftPad(final String string, final int size, final char padCharacter) {
+
+		if (string == null) {
+			return null;
+		}
+		final int padLength = size - string.length();
+		if (padLength <= 0) {
+			return string;
+		}
+		final char[] pad = new char[padLength];
+		Arrays.fill(pad, padCharacter);
+		return new String(pad) + string;
 	}
 
 	private Strings() {
