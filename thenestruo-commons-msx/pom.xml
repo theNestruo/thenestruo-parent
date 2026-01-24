@@ -11,6 +11,28 @@
 
 	<artifactId>thenestruo-commons-msx</artifactId>
 
+	<dependencies>
+
+		<!-- theNestruo -->
+		<dependency>
+			<groupId>com.github.thenestruo</groupId>
+			<artifactId>thenestruo-commons</artifactId>
+		</dependency>
+		
+		<!-- JUnit -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+
 	<!-- == More Project Information == -->
 
 	<description>(theNestruo) MSX-related reusable Java components</description>

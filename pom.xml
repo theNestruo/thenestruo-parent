@@ -54,6 +54,11 @@
 				<artifactId>thenestruo-commons</artifactId>
 				<version>${thenestruo.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.github.thenestruo</groupId>
+				<artifactId>thenestruo-commons-msx</artifactId>
+				<version>${thenestruo.version}</version>
+			</dependency>
 
 			<!-- Apache Commons -->
 			<dependency>
