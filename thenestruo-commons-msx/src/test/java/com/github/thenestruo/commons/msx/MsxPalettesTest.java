@@ -8,8 +8,6 @@ import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -17,10 +15,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import com.github.thenestruo.commons.maps.Pair;
 
 public class MsxPalettesTest {
-
-	@BeforeAll
-	static void beforeAll() {
-	}
 
 	@ParameterizedTest
 	@MethodSource("sortByLuminanceTestArguments")
@@ -34,10 +28,6 @@ public class MsxPalettesTest {
 				.map(msxColor -> String.format("%01X (%.4f)", msxColor.getIndex(), function.applyAsDouble(msxColor)))
 				.collect(Collectors.joining(" - "));
 		System.out.println(info + " :: " + label);
-	}
-
-	@AfterAll
-	static void afterAll() {
 	}
 
 	private static Stream<Arguments> sortByLuminanceTestArguments() {
