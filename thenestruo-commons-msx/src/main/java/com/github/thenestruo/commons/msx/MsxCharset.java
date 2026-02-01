@@ -2,6 +2,8 @@ package com.github.thenestruo.commons.msx;
 
 import java.util.Objects;
 
+import com.github.thenestruo.commons.IntArrays;
+
 /**
  * MSX charset data, mutable
  */
@@ -65,5 +67,19 @@ public class MsxCharset {
 	public void set(final int address, final MsxLine line) {
 		this.chrtbl[address] = line.chrtblByte();
 		this.clrtbl[address] = line.clrtblByte();
+	}
+
+	/**
+	 * @return the number of pixels of each color
+	 */
+	public int[] pixelCountByColor() {
+
+		final int count[] = new int[16];
+
+		for (int address = 0, size = this.size(); address < size; address++) {
+			IntArrays.addTo(count, this.get(address).pixelCountByColor());
+		}
+
+		return count;
 	}
 }

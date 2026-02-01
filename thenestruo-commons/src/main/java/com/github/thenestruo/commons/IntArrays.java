@@ -98,6 +98,23 @@ public class IntArrays {
 		return index;
 	}
 
+	/**
+	 * @param array the array where the values will be added
+	 * @param addends the addends
+	 * @return the array, for convenience
+	 */
+	public static int[] addTo(final int[] array, final int[] addends) {
+
+		if ((array == null) || (addends == null) | (array.length != addends.length)) {
+			return array;
+		}
+
+		for (int i = 1, n = array.length; i < n; i++) {
+			array[i] += addends[i];
+		}
+		return array;
+	}
+
 	private IntArrays() {
 	}
 }

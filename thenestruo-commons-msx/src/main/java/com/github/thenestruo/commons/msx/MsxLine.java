@@ -76,7 +76,7 @@ public class MsxLine {
 	 * @return MsxCharsetLine instance
 	 */
 	public static MsxLine backgroundOfColor(final byte singleColor) {
-		return new MsxLine(PATTERN_FG, toClrtblByte(singleColor));
+		return new MsxLine(PATTERN_BG, toClrtblByte(singleColor));
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class MsxLine {
 	 * @return MsxCharsetLine instance
 	 */
 	public static MsxLine backgroundOf(final byte fg, final byte bg) {
-		return new MsxLine(PATTERN_FG, toClrtblByte(fg, bg));
+		return new MsxLine(PATTERN_BG, toClrtblByte(fg, bg));
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class MsxLine {
 	 * @return line colors (CLRTBL byte)
 	 */
 	private static byte toClrtblByte(final byte fg, final byte bg) {
-		return (byte) ((fg << 4) | (bg & 0x0f));
+		return (byte) (((fg & 0x0f) << 4) | (bg & 0x0f));
 	}
 
 	//
@@ -133,36 +133,30 @@ public class MsxLine {
 	 * @param chrtblByte the line pattern (CHRTBL byte)
 	 * @param clrtblByte the line colors (CLRTBL byte)
 	 */
-	private MsxLine(final byte chrtblByte, final byte clrtblByte) {
+	protected MsxLine(final byte chrtblByte, final byte clrtblByte) {
 		this.chrtblByte = chrtblByte;
 		this.clrtblByte = clrtblByte;
 	}
 
 	@Override
-	public int hashCode() {
-
-		return Objects.hash(this.chrtblByte, this.clrtblByte);
-	}
-
-	@Override
-	public boolean equals(final Object obj) {
-
-		if (obj == this) {
-			return true;
-		}
-		if ((obj == null) || (obj.getClass() != this.getClass())) {
-			return false;
-		}
-		final MsxLine that = (MsxLine) obj;
-		return Objects.equals(this.chrtblByte, that.chrtblByte)
-				&& Objects.equals(this.clrtblByte, that.clrtblByte);
-	}
-
-	@Override
 	public String toString() {
 
-		return String.format("%s %01X %01X",
-				Strings.leftPad(Integer.toBinaryString(this.chrtblByte), 8, '0'), this.fg(), this.bg());
+		final String basePattern = Integer.toBinaryString(this.chrtblByte);
+		final String pattern = basePattern.length() < 8 ? Strings.leftPad(basePattern, 8, '0')
+				: basePattern.length() == 8  ? basePattern
+				: basePattern.substring(basePattern.length() - 8);
+
+		return String.format("%s %01X %01X", pattern, this.fg(), this.bg());
+	}
+
+	/**
+	 * @param that the other MSXLine to compare
+	 * @return {@code true} if both MsxLines have the same pattern and color (CHRTBL and CLRTBL bytes)
+	 */
+	public boolean isSameAs(final MsxLine that) {
+
+		return Objects.equals(this.chrtblByte, that.chrtblByte)
+				&& Objects.equals(this.clrtblByte, that.clrtblByte);
 	}
 
 	/**
@@ -184,6 +178,23 @@ public class MsxLine {
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * @return the number of pixels of each color
+	 */
+	public int[] pixelCountByColor() {
+
+		final int count[] = new int[16];
+
+		final int fg = this.fg();
+		final int bg = this.bg();
+		for (int bit = 0; bit < 8; bit++) {
+			final int color = ((this.chrtblByte & (1 << bit)) != 0) ? fg : bg;
+			count[color]++;
+		}
+
+		return count;
 	}
 
 	//
@@ -240,6 +251,20 @@ public class MsxLine {
 	 */
 	public boolean isSingleColor() {
 		return this.singleColor() != null;
+	}
+
+	/**
+	 * @return {@code true} if the pattern is all foreground bits, {@code false} otherwise
+	 */
+	public boolean isFg() {
+		return this.chrtblByte() == PATTERN_FG;
+	}
+
+	/**
+	 * @return {@code true} if the pattern is all background bits, {@code false} otherwise
+	 */
+	public boolean isBg() {
+		return this.chrtblByte() == PATTERN_BG;
 	}
 
 	/**
