@@ -1,8 +1,21 @@
 package com.github.thenestruo.commons.color;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Color {
+
+	/** Comparator using {@link #brightness() color brightness} */
+	public static final Comparator<? extends Color> brightnessComparator = Comparator
+			.comparingDouble(Color::brightness);
+
+	/** Comparator using {@link #perceivedBrightness() perceived brightness} */
+	public static final Comparator<? extends Color> perceivedBrightnessComparator = Comparator
+			.comparingDouble(Color::perceivedBrightness);
+
+	/** Comparator using {@link #relativeLuminance() relative Luminance (WCAG 2.0 Formula)} */
+	public static final Comparator<? extends Color> relativeLuminanceComparator = Comparator
+			.comparingDouble(Color::relativeLuminance);
 
 	public static Color copyOf(final Color that) {
 

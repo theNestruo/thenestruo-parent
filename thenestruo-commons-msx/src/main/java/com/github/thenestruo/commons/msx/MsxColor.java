@@ -1,10 +1,26 @@
 package com.github.thenestruo.commons.msx;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 import com.github.thenestruo.commons.color.Color;
 
 public class MsxColor extends Color {
+
+	/** Comparator using {@link #brightness() color brightness}, then color index */
+	public static final Comparator<? extends MsxColor> brightnessComparator = Comparator
+			.comparingDouble(MsxColor::brightness)
+			.thenComparingInt(MsxColor::getIndex);
+
+	/** Comparator using {@link #perceivedBrightness() perceived brightness}, then color index */
+	public static final Comparator<? extends MsxColor> perceivedBrightnessComparator = Comparator
+			.comparingDouble(MsxColor::perceivedBrightness)
+			.thenComparingInt(MsxColor::getIndex);
+
+	/** Comparator using {@link #relativeLuminance() relative Luminance (WCAG 2.0 Formula)}, then color index */
+	public static final Comparator<? extends MsxColor> relativeLuminanceComparator = Comparator
+			.comparingDouble(MsxColor::relativeLuminance)
+			.thenComparingInt(MsxColor::getIndex);
 
 	/**
 	 * @param index the color index (0-15)
