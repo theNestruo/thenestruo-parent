@@ -1,6 +1,7 @@
 package com.github.thenestruo.commons.msx;
 
 import java.util.Objects;
+import java.util.function.Function;
 
 import com.github.thenestruo.commons.IntArrays;
 
@@ -70,14 +71,44 @@ public class MsxCharset {
 	}
 
 	/**
+	 * @param colorCountFunction the function to get the color count of each line
 	 * @return the number of pixels of each color
 	 */
-	public int[] pixelCountByColor() {
+	public int[] colorCount(Function<MsxLine, int[]> colorCountFunction) {
+
+		return this.pixelCountByColor(0, 1, colorCountFunction);
+	}
+
+	/**
+	 * @param colorCountFunction the function to get the color count of each line
+	 * @return the number of pixels of each color of even lines
+	 */
+	public int[] evenLinesColorCount(Function<MsxLine, int[]> colorCountFunction) {
+
+		return this.pixelCountByColor(0, 2, colorCountFunction);
+	}
+
+	/**
+	 * @param colorCountFunction the function to get the color count of each line
+	 * @return the number of pixels of each color of odd lines
+	 */
+	public int[] oddLinesColorCount(Function<MsxLine, int[]> colorCountFunction) {
+
+		return this.pixelCountByColor(1, 2, colorCountFunction);
+	}
+
+	/**
+	 * @param startAddress the start address
+	 * @param step the address step
+	 * @param colorCountFunction the function to get the color count of each line
+	 * @return the number of pixels of each color of every step lines, starting at startAddress
+	 */
+	private int[] pixelCountByColor(int startAddress, int step, Function<MsxLine, int[]> colorCountFunction) {
 
 		final int count[] = new int[16];
 
-		for (int address = 0, size = this.size(); address < size; address++) {
-			IntArrays.addTo(count, this.get(address).pixelCountByColor());
+		for (int address = startAddress, size = this.size(); address < size; address += step) {
+			IntArrays.addTo(count, colorCountFunction.apply(this.get(address)));
 		}
 
 		return count;

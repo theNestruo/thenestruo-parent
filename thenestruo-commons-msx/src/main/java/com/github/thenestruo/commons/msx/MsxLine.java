@@ -181,9 +181,9 @@ public class MsxLine {
 	}
 
 	/**
-	 * @return the number of pixels of each color
+	 * @return the color count, counting the color of each pixel
 	 */
-	public int[] pixelCountByColor() {
+	public int[] colorCountByPixel() {
 
 		final int count[] = new int[16];
 
@@ -192,6 +192,42 @@ public class MsxLine {
 		for (int bit = 0; bit < 8; bit++) {
 			final int color = ((this.chrtblByte & (1 << bit)) != 0) ? fg : bg;
 			count[color]++;
+		}
+
+		return count;
+	}
+
+	/**
+	 * @return the color count, counting the colors of the line
+	 * (single colored line color is counted twice)
+	 */
+	public int[] colorCountWeighted() {
+
+		final int count[] = new int[16];
+
+		if (this.isSingleColor()) {
+			count[this.singleColor()] += 2;
+		} else {
+			count[this.fg()]++;
+			count[this.bg()]++;
+		}
+
+		return count;
+	}
+
+	/**
+	 * @return the color count, counting the colors of the line
+	 * (single colored line color is counted only once)
+	 */
+	public int[] colorCountByByte() {
+
+		final int count[] = new int[16];
+
+		if (this.isSingleColor()) {
+			count[this.singleColor()]++;
+		} else {
+			count[this.fg()]++;
+			count[this.bg()]++;
 		}
 
 		return count;
