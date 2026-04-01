@@ -28,7 +28,7 @@
 		<commons-collections4.version>4.5.0</commons-collections4.version>
 		<commons-lang3.version>3.20.0</commons-lang3.version>
 		<commons-io.version>2.21.0</commons-io.version>
-		<jackson.version>2.21.1</jackson.version>
+		<jackson.version>2.21.2</jackson.version>
 		<jakarta.xml.bind.version>4.0.5</jakarta.xml.bind.version>
 		<junit.version>6.0.3</junit.version>
 		<picocli.version>4.7.7</picocli.version>
@@ -38,11 +38,11 @@
 		<!-- Plugin management -->
 		<maven-enforcer-plugin.version>3.6.2</maven-enforcer-plugin.version>
 		<exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
-		<extra-enforcer-rules.version>1.11.0</extra-enforcer-rules.version>
-		<maven-shade-plugin.version>3.6.1</maven-shade-plugin.version>
+		<extra-enforcer-rules.version>1.12.0</extra-enforcer-rules.version>
+		<maven-shade-plugin.version>3.6.2</maven-shade-plugin.version>
 		<versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
-		<modernizer-maven-plugin.version>3.2.0</modernizer-maven-plugin.version>
-		<spotbugs-maven-plugin.version>4.9.8.2</spotbugs-maven-plugin.version>
+		<modernizer-maven-plugin.version>3.3.0</modernizer-maven-plugin.version>
+		<spotbugs-maven-plugin.version>4.9.8.3</spotbugs-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
