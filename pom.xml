@@ -27,8 +27,8 @@
 		<commons-csv.version>1.14.1</commons-csv.version>
 		<commons-collections4.version>4.5.0</commons-collections4.version>
 		<commons-lang3.version>3.20.0</commons-lang3.version>
-		<commons-io.version>2.21.0</commons-io.version>
-		<jackson.version>2.21.2</jackson.version>
+		<commons-io.version>2.22.0</commons-io.version>
+		<jackson.version>2.21.3</jackson.version>
 		<jakarta.xml.bind.version>4.0.5</jakarta.xml.bind.version>
 		<junit.version>6.0.3</junit.version>
 		<picocli.version>4.7.7</picocli.version>
