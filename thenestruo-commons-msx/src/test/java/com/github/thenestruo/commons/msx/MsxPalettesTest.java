@@ -52,11 +52,12 @@ public class MsxPalettesTest {
 		final List<Arguments> list = new ArrayList<>();
 
 		for (final Pair<String, List<MsxColor>> palettePair : Arrays.asList(
-				Pair.of("TMS9219", MsxPalettes.TMS9219_PALETTE),
-				Pair.of("TMS9918", MsxPalettes.TMS9918_PALETTE),
-				Pair.of("YAZIOH ", MsxPalettes.YAZIOH_PALETTE),
-				Pair.of("TOSHIBA", MsxPalettes.TOSHIBA_PALETTE),
-				Pair.of("V9938  ", MsxPalettes.V9938_PALETTE))) {
+				Pair.of("TMS9219",  MsxPalettes.TMS9219_PALETTE),
+				Pair.of("TMS9918",  MsxPalettes.TMS9918_PALETTE),
+				Pair.of("TMS9918a", MsxPalettes.TMS9918A_PALETTE),
+				Pair.of("YAZIOH ",  MsxPalettes.YAZIOH_PALETTE),
+				Pair.of("TOSHIBA",  MsxPalettes.TOSHIBA_PALETTE),
+				Pair.of("V9938  ",  MsxPalettes.V9938_PALETTE))) {
 			final List<MsxColor> palette = palettePair.getValue();
 			for (final Pair<String, ToDoubleFunction<MsxColor>> functionPair : Arrays.asList(
 					Pair.of("         brightness", (ToDoubleFunction<MsxColor>) MsxColor::brightness),

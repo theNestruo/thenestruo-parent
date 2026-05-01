@@ -29,6 +29,30 @@ public class MsxPalettes {
 			MsxColor.hex((byte) 15, 0xFFFFFF) // 15 white
 	));
 
+	/***
+	 * TI TMS9918a palette, according Sean Young and SMS Power
+	 * (http://bifi.msxnet.org/msxnet/tech/tms9918a.txt)
+	 * (https://www.smspower.org/Development/Palette)
+	 */
+	public static final List<MsxColor> TMS9918A_PALETTE = Collections.unmodifiableList(Arrays.asList(
+			MsxColor.hex((byte) 0, 0x404040), // 0 transparent
+			MsxColor.hex((byte) 1, 0x000000), // 1 black
+			MsxColor.hex((byte) 2, 0x21C842), // 2 medium green
+			MsxColor.hex((byte) 3, 0x5EDC78), // 3 light green
+			MsxColor.hex((byte) 4, 0x5455ED), // 4 dark blue
+			MsxColor.hex((byte) 5, 0x7D76FC), // 5 light blue
+			MsxColor.hex((byte) 6, 0xD4524D), // 6 dark red
+			MsxColor.hex((byte) 7, 0x42EBF5), // 7 cyan
+			MsxColor.hex((byte) 8, 0xFC5554), // 8 medium red
+			MsxColor.hex((byte) 9, 0xFF7978), // 9 light red
+			MsxColor.hex((byte) 10, 0xD4C154), // 10 dark yellow
+			MsxColor.hex((byte) 11, 0xE6CE80), // 11 light yellow
+			MsxColor.hex((byte) 12, 0x21B03B), // 12 dark green
+			MsxColor.hex((byte) 13, 0xC95BBA), // 13 magenta
+			MsxColor.hex((byte) 14, 0xCCCCCC), // 14 gray
+			MsxColor.hex((byte) 15, 0xFFFFFF) // 15 white
+	));
+
 	/**
 	 * TI TMS9219 palette, from hap's meisei emulator
 	 */
