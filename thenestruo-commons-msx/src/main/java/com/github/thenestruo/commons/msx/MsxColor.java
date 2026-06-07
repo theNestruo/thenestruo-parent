@@ -79,7 +79,7 @@ public class MsxColor extends Color {
 
 	@Override
 	public String toString() {
-		return String.format("#%01X (%s)", this.index, super.toString());
+		return "#%01X (%s)".formatted(this.index, super.toString());
 	}
 
 	//

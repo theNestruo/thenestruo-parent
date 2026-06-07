@@ -146,7 +146,7 @@ public class MsxLine {
 				: basePattern.length() == 8  ? basePattern
 				: basePattern.substring(basePattern.length() - 8);
 
-		return String.format("%s %01X %01X", pattern, this.fg(), this.bg());
+		return "%s %01X %01X".formatted(pattern, this.fg(), this.bg());
 	}
 
 	/**

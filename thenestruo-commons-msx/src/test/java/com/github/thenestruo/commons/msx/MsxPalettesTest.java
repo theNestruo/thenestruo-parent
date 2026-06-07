@@ -27,7 +27,7 @@ public class MsxPalettesTest {
 		list.sort(Comparator.comparingDouble(function).thenComparingInt(MsxColor::getIndex));
 
 		final String debug = list.stream()
-				.map(msxColor -> String.format("%01X (%.4f)", msxColor.getIndex(), function.applyAsDouble(msxColor)))
+				.map(msxColor -> "%01X (%.4f)".formatted(msxColor.getIndex(), function.applyAsDouble(msxColor)))
 				.collect(Collectors.joining(", "));
 		System.out.printf("%s: %s%n", label, debug);
 
@@ -64,7 +64,7 @@ public class MsxPalettesTest {
 					Pair.of("perceivedBrightness", (ToDoubleFunction<MsxColor>) MsxColor::perceivedBrightness),
 					Pair.of("  relativeLuminance", (ToDoubleFunction<MsxColor>) MsxColor::relativeLuminance))) {
 				final ToDoubleFunction<MsxColor> function = functionPair.getValue();
-				final String label = String.format("%s(%s)", functionPair.getKey(), palettePair.getKey());
+				final String label = "%s(%s)".formatted(functionPair.getKey(), palettePair.getKey());
 
 				list.add(Arguments.of(label, palette, function));
 			}
