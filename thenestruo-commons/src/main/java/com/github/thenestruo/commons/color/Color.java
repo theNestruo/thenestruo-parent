@@ -80,7 +80,7 @@ public class Color {
 
 	@Override
 	public String toString() {
-		return String.format("%06X", this.hex);
+		return "%06X".formatted(this.hex);
 	}
 
 	//
