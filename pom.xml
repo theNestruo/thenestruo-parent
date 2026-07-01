@@ -28,11 +28,11 @@
 		<commons-collections4.version>4.5.0</commons-collections4.version>
 		<commons-lang3.version>3.20.0</commons-lang3.version>
 		<commons-io.version>2.22.0</commons-io.version>
-		<jackson.version>3.1.4</jackson.version>
+		<jackson.version>3.2.0</jackson.version>
 		<jakarta.xml.bind.version>4.0.5</jakarta.xml.bind.version>
-		<junit.version>6.1.0</junit.version>
+		<junit.version>6.1.1</junit.version>
 		<picocli.version>4.7.7</picocli.version>
-		<spotbugs.version>4.9.8</spotbugs.version>
+		<spotbugs.version>4.10.2</spotbugs.version>
 		<tinylog.version>2.7.0</tinylog.version>
 
 		<!-- Plugin management -->
@@ -42,7 +42,7 @@
 		<maven-shade-plugin.version>3.6.2</maven-shade-plugin.version>
 		<versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
 		<modernizer-maven-plugin.version>3.4.0</modernizer-maven-plugin.version>
-		<spotbugs-maven-plugin.version>4.9.8.3</spotbugs-maven-plugin.version>
+		<spotbugs-maven-plugin.version>4.10.2.0</spotbugs-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
