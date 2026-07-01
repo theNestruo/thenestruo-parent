@@ -4,13 +4,17 @@ import java.util.Objects;
 
 public class Range<N extends Number> {
 
+	public static <N extends Number> Range of(final N minimum, final N maximum) {
+		return new Range<>(minimum, maximum);
+	}
+
 	private final N minimum;
 
 	private final N maximum;
 
 	public Range(final N minimum, final N maximum) {
-		this.minimum = Objects.requireNonNull(minimum);
-		this.maximum = Objects.requireNonNull(maximum);
+		this.minimum = minimum;
+		this.maximum = maximum;
 	}
 
 	/**

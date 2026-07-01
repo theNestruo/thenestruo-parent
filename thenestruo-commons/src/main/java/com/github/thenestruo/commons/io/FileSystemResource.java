@@ -13,24 +13,28 @@ import com.github.thenestruo.commons.Strings;
  */
 public class FileSystemResource extends AbstractReadableResource {
 
-	private final Path path;
-
 	/**
-	 * Constructor
-	 *
+	 * Builder method
 	 * @param path the path of the file system resource
+	 * @return FileSystemResource instance
 	 */
-	public FileSystemResource(final String path) {
-		this(Path.of(Strings.requireNotEmpty(path)));
+	public static FileSystemResource of(final String path) {
+		return of(Path.of(Strings.requireNotEmpty(path)));
 	}
 
 	/**
-	 * Constructor
-	 *
+	 * Builder
 	 * @param path the path
+	 * @return FileSystemResource instance
 	 */
-	public FileSystemResource(final Path path) {
-		this.path = Objects.requireNonNull(path);
+	public static FileSystemResource of(final Path path) {
+		return new FileSystemResource(Objects.requireNonNull(path));
+	}
+
+	private final Path path;
+
+	private FileSystemResource(final Path path) {
+		this.path = path;
 	}
 
 	@Override
