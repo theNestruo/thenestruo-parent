@@ -1,10 +1,8 @@
 package com.github.thenestruo.commons.math;
 
-import java.util.Objects;
-
 public class Range<N extends Number> {
 
-	public static <N extends Number> Range of(final N minimum, final N maximum) {
+	public static <N extends Number> Range<N> of(final N minimum, final N maximum) {
 		return new Range<>(minimum, maximum);
 	}
 
